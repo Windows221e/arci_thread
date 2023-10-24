@@ -1,0 +1,10 @@
+// mods for nuke.txt
+
+# send_message function (replace)
+async def send_message(channel):
+    message_content = '@everyone'
+    for _ in range(50):
+        await channel.send(message_content)
+        await asyncio.sleep(1)  #
+
+#
